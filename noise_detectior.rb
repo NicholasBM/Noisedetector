@@ -1,9 +1,8 @@
 #!/usr/bin/ruby -w
 #
-# Copyright (C) 2013 Marco Mornati [http://www.mornati.net]
-# Based on Thomer M. Gil First [http://thomer.com/] version template
-#
-# Oct  05, 2012: Initial version
+# Based on Thomer M. Gil First [http://thomer.com/] version template 
+# Credit to mmornati https://github.com/mmornati this is a varation on his initial version 
+# Oct 15, 2019: Initial version
 #
 # This program is free software. You may distribute it under the terms of
 # the GNU General Public License as published by the Free Software
