@@ -168,8 +168,8 @@ pid = fork do
     if amplitude > THRESHOLD
       logger.info("Sound detected!!!")
 
-#call a url
-uri =URI ('https://maker.ifttt.com/trigger/loud_noise/with/key/moQaOv4EIGNAoAQB_t98x4wS0xPnLcYRjO9NOHfwY6_')
+#call a url - put you webhook below
+uri =URI ('https://maker.ifttt.com/trigger/EXAMPLE_TRIGGER/with/key/PUT_YOUR API_KEY_HERE')
 Net::HTTP.get(uri) #=> String 
   
   	# Read a file
