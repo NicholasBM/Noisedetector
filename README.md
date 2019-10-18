@@ -1,5 +1,5 @@
 # Noisedetector
-A configurable noise detector that can call a web hook if a certain level of noise is detected 
+A configurable noise detector that can call a web hook or email you if a certain level of noise is detected 
 
 
 ruby-noise-detection
