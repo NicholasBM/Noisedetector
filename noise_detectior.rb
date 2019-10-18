@@ -1,7 +1,6 @@
 #!/usr/bin/ruby -w
 #
-# Based on Thomer M. Gil First [http://thomer.com/] version template 
-# Credit to mmornati https://github.com/mmornati this is a varation on his initial version 
+# Based on Thomer M. Gil &  mmornati [http://thomer.com/] https://thomer.com/howtos/detect_sound.html
 # Oct 15, 2019: Initial version
 #
 # This program is free software. You may distribute it under the terms of
