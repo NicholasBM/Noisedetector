@@ -1,7 +1,9 @@
 #!/usr/bin/ruby -w
 #
-# Based on Thomer M. Gil &  mmornati [http://thomer.com/] https://thomer.com/howtos/detect_sound.html
-# Oct 15, 2019: Initial version
+# Copyright (C) 2013 Marco Mornati [http://www.mornati.net]
+# Based on Thomer M. Gil First [http://thomer.com/] version template
+#
+# Oct  05, 2012: Initial version
 #
 # This program is free software. You may distribute it under the terms of
 # the GNU General Public License as published by the Free Software
@@ -69,7 +71,7 @@ optparse = OptionParser.new do |opts|
   opts.on("-s", "--sample SECONDS", "Sample duration") do |s|
     options[:sample] = s
   end
-  opts.on("-n", "--threshold NOISE_THRESHOLD", "Set Activation noise Threshold. EX. 0.1") do |n|
+  opts.on("-n", "--threshold NOISE_THRESHOLD", "Set Activation noise Threshold. EX. 0.28") do |n|
     options[:threshold] = n
   end
   opts.on("-e", "--email DEST_EMAIL", "Alert destination email") do |e|
@@ -164,28 +166,25 @@ pid = fork do
     out.match(/Maximum amplitude:\s+(.*)/m)
     amplitude = $1.to_f
     logger.debug("Detected amplitude: #{amplitude}") if options[:verbose]
-    if amplitude > THRESHOLD
-      logger.info("Sound detected!!!")
+    current_time = Time.now 
+    if (current_time.hour >=20) && (amplitude > THRESHOLD)
 
-#call a url - put you webhook below
-uri =URI ('https://maker.ifttt.com/trigger/EXAMPLE_TRIGGER/with/key/PUT_YOUR API_KEY_HERE')
-Net::HTTP.get(uri) #=> String 
   
-  	# Read a file
-	filecontent = File.open(RECORD_FILENAME ,"rb") {|io| io.read}
- 	
-        encoded = [filecontent].pack("m")    # base64 econding
-puts  value = %x[/usr/sbin/sendmail #{options[:email]} << EOF
-subject: WARNING: Noise Detected
-from: home@mornati.net
-Content-Description: "noise.wav"
-Content-Type: audio/x-wav; name="noise.wav"
-Content-Transfer-Encoding:base64
-Content-Disposition: attachment; filename="noise.wav"
-#{encoded}
-EOF] 
+    puts "I heard a noise and its past bed time, better go see" 
+     logger.info("Sound detected!!!")
+
+#call a url or webhook
+uri =URI ('https://maker.ifttt.com/trigger/YOUR_TRIGGER_HERE/with/key/YOUR_KEY_HERE')
+Net::HTTP.get(uri) #=> String 
+
+#take a nap, dont want spam
+puts "going to sleep, wake me up when this nighmare ends :-)"
+sleep(30)
+puts "Im awake"
+
+
     else
-      logger.debug("No sound detected...")
+      puts "Either I didnt hear anything, or if I did its to early for a baby crying!"
     end
 end
 end
