@@ -77,3 +77,11 @@ Terminating Noise Detection
 ```bash
 noise_detection.rb -k
 ```
+Setup your webhook
+---------------------------
+I used IFTTT which you can read more about on the url below
+Primarly to get this up and running you will need to edit the trigger with your trigger name and also your unique key
+
+https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ
+
+
