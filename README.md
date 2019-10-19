@@ -1,5 +1,5 @@
 # Noisedetector
-A configurable noise detector that can call a webhook or email you if a certain level of noise is detected 
+A configurable noise detector that can call a webhook or email you if a certain level of noise is detected. I have this setup to only run after 8pm and over a certain threshold it calls a webhook that then fires off some IFTTT actions, such as a push notificaiton on my phone. 
 
 
 ruby-noise-detection
