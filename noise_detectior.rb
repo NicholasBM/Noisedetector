@@ -1,6 +1,6 @@
 #!/usr/bin/ruby -w
 #
-# Copyright (C) 2013 Marco Mornati [http://www.mornati.net]
+# 
 # Based on Thomer M. Gil First [http://thomer.com/] version template
 #
 # Oct  05, 2012: Initial version
