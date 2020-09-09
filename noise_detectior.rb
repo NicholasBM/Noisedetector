@@ -29,7 +29,7 @@ require 'uri'
 HW_DETECTION_CMD = "cat /proc/asound/cards"
 # You need to replace MICROPHONE with the name of your microphone, as reported
 # by /proc/asound/cards
-SAMPLE_DURATION = 5 # seconds
+SAMPLE_DURATION = 6 # seconds
 FORMAT = 'S16_LE'   # this is the format that my USB microphone generates
 THRESHOLD = 0.5
 RECORD_FILENAME='/tmp/noise.wav'
